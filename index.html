@@ -1,0 +1,892 @@
+<!DOCTYPE html5>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="primo.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+	
+<script>
+////////////
+
+    function takeshot() {
+            let div =  document.getElementById("image");
+            html2canvas(div,{scale: 8, windowWidth: 310, windowHeight: 438.5, x:0 }).then(function (canvas) {
+              var link = document.createElement("a");
+              document.body.appendChild(link);
+              link.download = "nosa_cv";
+              link.href = canvas.toDataURL();
+              link.target = '_blank';
+              link.click(); }) }
+              
+    function editor(){
+      document.getElementById("image").style="display:none";
+      document.getElementById("editor").style="display:none";
+      document.getElementById("details").style="display: block";
+      document.getElementById("createImage").style="display: block";
+      document.getElementById("downloadImage").style="display:none"; }
+    
+    function appear() {
+      
+      var fullName = document.getElementById("fullName").value;
+      var fullNameCV = document.getElementById("fullNameCV");
+      fullNameCV.innerHTML = fullName;
+      
+      var occupation = document.getElementById("occupation").value;
+      var occupationCV = document.getElementById("occupationCV");
+      occupationCV.innerHTML = occupation;
+      
+      var gender  = document.getElementById("gender").value;
+      var genderCV = document.getElementById("genderCV");
+      genderCV.innerHTML = gender;
+      
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      var phoneNumberCV = document.getElementById("phoneNumberCV");
+      phoneNumberCV.innerHTML = phoneNumber;
+      
+      var email = document.getElementById("email").value;
+      var emailCV = document.getElementById("emailCV");
+      emailCV.innerHTML = email;
+      
+      var address = document.getElementById("address").value;
+      var addressCV = document.getElementById("addressCV");
+      addressCV.innerHTML = address;
+      
+      var day = document.getElementById("day").value;
+      var month = document.getElementById("month").value;
+      var year = document.getElementById("year").value;
+      var dmy = document.getElementById("dmy");
+      dmy.innerHTML = day+"-"+month+"-"+year;
+      
+      var religion = document.getElementById("religion").value;
+      var religionCV = document.getElementById("religionCV");
+      religionCV.innerHTML = religion;
+      
+      var email = document.getElementById("email").value;
+      var emailCV = document.getElementById("emailCV");
+      emailCV.innerHTML = email;
+      
+      var maritalStatus = document.getElementById("maritalStatus").value;
+      var maritalStatusCV = document.getElementById("maritalStatusCV");
+      maritalStatusCV.innerHTML = maritalStatus;
+      
+      var aboutMe = document.getElementById("aboutMe").value;
+      var aboutMeCV = document.getElementById("aboutMeCV");
+      aboutMeCV.innerHTML = aboutMe;
+      
+      
+      var year1 = document.getElementById("year1").value;
+      var year2 = document.getElementById("year2").value;
+      var yearsCV = document.getElementById("yearsCV");
+      yearsCV.innerHTML = year1+"-"+year2;
+      
+      var companyName = document.getElementById("companyName").value;
+      var companyNameCV = document.getElementById("companyNameCV");
+      companyNameCV.innerHTML = companyName;
+      
+      var position = document.getElementById("position").value;
+      var positionCV = document.getElementById("positionCV");
+      positionCV.innerHTML = position;
+      
+      var experience = document.getElementById("experience").value;
+      var experienceCV = document.getElementById("experienceCV");
+      experienceCV.innerHTML = experience;
+      
+      
+      
+      var primaryYear1 = document.getElementById("primaryYear1").value;
+      var primaryYear2 = document.getElementById("primaryYear2").value;
+      var primaryYearCV = document.getElementById("primaryYearCV");
+      primaryYearCV.innerHTML = primaryYear1+"-"+primaryYear2;
+      
+      var secondaryYear1 = document.getElementById("secondaryYear1").value;
+      var secondaryYear2 = document.getElementById("secondaryYear2").value;
+      var secondaryYearCV = document.getElementById("secondaryYearCV");
+      secondaryYearCV.innerHTML = secondaryYear1+"-"+secondaryYear2;
+      
+      var uniYear1 = document.getElementById("uniYear1").value;
+      var uniYear2 = document.getElementById("uniYear2").value;
+      var uniYearCV = document.getElementById("uniYearCV");
+      uniYearCV.innerHTML = uniYear1+"-"+uniYear2;
+      
+      var primaryEducation = document.getElementById("primaryEducation").value;
+      var primaryEducationCV = document.getElementById("primaryEducationCV");
+      primaryEducationCV.innerHTML = primaryEducation;
+      
+      var secondaryEducation = document.getElementById("secondaryEducation").value;
+      var secondaryEducationCV = document.getElementById("secondaryEducationCV");
+      secondaryEducationCV.innerHTML = secondaryEducation;
+      
+      var uniEducation = document.getElementById("uniEducation").value;
+      var uniEducationCV = document.getElementById("uniEducationCV");
+      uniEducationCV.innerHTML = uniEducation;
+      
+      
+      
+      var name1 = document.getElementById("name1").value;
+      var name1CV = document.getElementById("name1CV");
+      name1CV.innerHTML = name1;
+      
+      var positionInCompany = document.getElementById("positionInCompany").value;
+      var positionInCompanyCV = document.getElementById("positionInCompanyCV");
+      positionInCompanyCV.innerHTML = positionInCompany;
+      
+      var phone1 = document.getElementById("phone1").value;
+      var phone1CV = document.getElementById("phone1CV");
+      phone1CV.innerHTML = phone1;
+      
+      var email1 = document.getElementById("email1").value;
+      var email1CV = document.getElementById("email1CV");
+      email1CV.innerHTML = email1;
+      
+      
+      
+      var name2 = document.getElementById("name2").value;
+      var name2CV = document.getElementById("name2CV");
+      name2CV.innerHTML = name2;
+      
+      var positionInCompany2 = document.getElementById("positionInCompany2").value;
+      var positionInCompany2CV = document.getElementById("positionInCompany2CV");
+      positionInCompany2CV.innerHTML = positionInCompany2;
+      
+      var phone2 = document.getElementById("phone2").value;
+      var phone2CV = document.getElementById("phone2CV");
+      phone2CV.innerHTML = phone2;
+      
+      var email2 = document.getElementById("email2").value;
+      var email2CV = document.getElementById("email2CV");
+      email2CV.innerHTML = email2;
+      
+      document.getElementById("details").style="display: none";
+      document.getElementById("createImage").style="display: none";
+      document.getElementById("editor").style="display: inline-block";
+      document.getElementById("image").style="display: block";
+      document.getElementById("downloadImage").style="display: inline-block";
+      
+    }
+           
+    
+           
+</script>
+
+<style>
+  body { 
+      background-image: linear-gradient(to bottom right, #2b2024, #000000 ); 
+      width: 100%;
+      height: auto;
+      margin: 0px; }
+	
+	
+	.cv  { 
+	    display: none;
+	    background-color: #ffffff; 
+	    color: #ffffff;
+	    width: 310px;
+	    height: 438.5px;
+	    box-shadow: 0px 0px 8px #000000;
+	    margin-top: 20px;
+	     }
+  
+	table {
+	    width: 90%;
+	    background-color: #ffffff;
+	    color: #000000; 
+	    margin: 0px; 
+	    margin-top: 0px; }
+	    
+	td { padding: 0px; }
+	
+  .download { 
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0);
+      border: 1.2px solid #ffffff; 
+      border-radius: 10px;
+      margin: 10px;
+      padding: 5px;
+      background-image: linear-gradient(to bottom right, #a80139, #fd0053 ); }
+      
+    #downloadImage { display:none; }
+    #editor {display: none; }
+      
+  .shif { 
+      text-align: right; 
+      background-image: linear-gradient(to bottom right, #a80139, #fd0053 );  }
+	
+	.bune {
+	    display: block;
+	    padding: 10px;
+	    color: #ffffff;
+	    font-family: monospace;
+	 }
+	 
+	 .top { 
+	     width: 100%; }
+   
+   .names { 
+       width: 90%; 
+       border: none;
+       margin-bottom: 2px;
+       border-bottom: 1px solid #000000; }
+     
+     .names h3{
+       margin: 0px;
+       color: #000000;
+       font-size: 11px;  }
+     
+     .names h5{
+       margin: 0px;
+       font-size: 5px;
+       color: #000000;
+       font-weight: normal;  
+       margin-top: 8px; }
+       
+     .contacts { 
+       width: 100%; 
+       margin-top: 5px;
+       border: none;  }
+     
+     .contacts i { 
+       display: inline-block; 
+       font-size: 7px;  }
+       
+     .contacts p { 
+       display: inline-block; 
+       font-size: 5px;
+       margin: 0px; 
+       margin-top: 2px;
+       margin-bottom: 2.5px;   }     
+       
+     .personal { 
+       color: #000000; 
+       margin-top: 0px;
+       margin-bottom: 10px; 
+       width: 90%; }
+     
+     .personal h3 { 
+       font-size: 7px;  
+       border: none;
+       border-bottom: 1px solid #000000;
+       margin: 0px;
+       margin-top: 5px;
+       margin-bottom: 10px;  }
+    
+     .personal p  { 
+       font-size: 5px;
+       margin-left: 4px;  }
+     
+     .person { 
+       font-size: 5px;
+       margin-left: 0px;  }
+       
+     .about { 
+       color: #000000; 
+       margin-top: 0px;
+       margin-bottom: 10px; 
+       width: 90%; }
+     
+     .about h3 { 
+       font-size: 7px; 
+       border: none;
+       border-bottom: 1px solid #000000; 
+       margin-top: 5px;
+       margin-bottom: 10px; }
+     
+     .about p { font-size: 5px; }
+     
+     .exp { 
+       color: #000000; 
+       margin-top: 0px;
+       margin-bottom: 10px; 
+       width: 90%; }
+     
+     .exp h3 { 
+       font-size: 7px; 
+       border: none;
+       border-bottom: 1px solid #000000; 
+       margin: 0px;
+       margin-top: 5px;
+       margin-bottom: 10px;  }
+     
+     .exp p  { 
+       font-size: 5px;
+       margin-left: 0px;  }
+       
+     .stb {
+       font-weight: bold; }
+     
+     .exps { 
+       font-size: 5px;
+       margin-left: auto;  }
+       
+     .education { 
+       color: #000000; 
+       margin-top: 0px;
+       margin-bottom: 10px; 
+       width: 90%; }
+     
+     .education h3 { 
+       font-size: 7px; 
+       border: none;
+       border-bottom: 1px solid #000000; 
+       margin: 0px;
+       margin-top: 5px;
+       margin-bottom: 10px;  }
+     
+     .education p  { 
+       font-size: 5px;
+       margin-left: 0px;
+       margin-bottom: 1px; }
+     
+     .edu { 
+       font-size: 5px;
+       margin-left: auto;  }
+       
+     .ref { 
+       color: #000000; 
+       margin-top: 0px;
+       margin-bottom: 10px; 
+       width: 90%; }
+     
+     .ref h3 { 
+       font-size: 7px; 
+       border: none;
+       border-bottom: 1px solid #000000; 
+       margin: 0px;
+       margin-top: 5px;
+       margin-bottom: 10px;  }
+       
+     .smaller {
+       font-size: 5px; 
+       font-weight: bold; 
+       margin: 0px;  }
+     
+     .ref p { 
+       font-size: 5px;
+       margin-bottom: 1px; }
+     
+     .refA { 
+       display: block;
+       width: 120px; }
+       
+     .refB { 
+       display: block;
+       margin-top: 10px;
+       width: 120px; }
+       
+     .exp table {
+	    width: 100%;
+	    background-color: #ffffff;
+	    color: #000000; 
+	    margin: 0px; }
+	    
+	   .education table {
+	    width: 100%;
+	    background-color: #ffffff;
+	    color: #000000; 
+	    margin: 0px; }
+	    
+	  .space { 
+	    width: 100%;
+	    height: 20px; }
+	    
+	  .bbc { 
+	    width: 90%;
+	    margin-top: 10px; }
+	    
+	  .bbc2 { 
+	    width: 90%;
+	    margin-top: 20px; }
+	    
+	  .blackBox { 
+	    width: 40px;
+	    height: 2px; 
+	    margin: 0px;
+	    padding: 0px;
+	    background-color: #FFFFFF; }
+     
+    .cardBase{
+	    width: 80px;
+	    height: 80px;
+	    display: flex;
+      justify-content: right;
+      align-items: right;
+	    border-radius: 0px;
+	    background-color: #ffffff; 
+	    margin: 0px; }
+	    
+	  .cardBase img {
+	    max-width: 100%;
+      max-height: 100%;
+      display: block;
+	    border: 2px solid #000000; }
+	    
+	/* info */
+	  .info { 
+	    width: 300px;
+	    color: #ffffff;
+      border-radius: 10px; }
+     
+    .info h3 { 
+       font-size: 12px; 
+       margin: 0px;
+       margin-top: 5px;
+       margin-bottom: 5px;  }
+    
+    .info input {
+       width: 300px;
+       height: 20px;
+       padding: 2px;
+       margin-top: 2px;
+       margin-bottom: 2px; 
+       color: #ffffff;
+       font-size: 12px; 
+       border: 1px solid #ffffff;
+       border-radius: 8px;
+       text-align: left;
+       padding: auto;
+       background-color: rgba(0, 0, 0, 0);   }
+       
+    .info textarea {
+       width: 300px;
+       height: 60px;
+       color: #ffffff;
+       padding: 2px;
+       font-size: 12px; 
+       border: 1px solid #ffffff;
+       border-radius: 10px;
+       text-align: left;
+       padding: auto;
+       background-color: rgba(0, 0, 0, 0);   }
+       
+     input::placeholder {
+        color: #ffffff;
+        opacity: 0.4; }
+       
+     .info2 { 
+	    width: 300px;
+	    color: #ffffff;
+      border-radius: 10px; }
+     
+    .info2 h3 { 
+       font-size: 12px; 
+       margin: 0px;
+       margin-top: 5px;
+       margin-bottom: 5px;  }
+       
+     .info2 h5 { 
+       font-size: 10px; 
+       display: inline;
+       margin: 2px; }
+    
+    .info2 input {
+       width: 80px;
+       height: 20px;
+       display: inline-block;
+       padding: 2px;
+       margin-top: 2px;
+       margin-bottom: 2px; 
+       color: #ffffff;
+       font-size: 12px; 
+       border: 1px solid #ffffff;
+       border-radius: 8px;
+       padding: auto;
+       background-color: rgba(0, 0, 0, 0);   }
+       
+    .info2 textarea {
+       width: 300px;
+       height: 60px;
+       color: #ffffff;
+       padding: 2px;
+       font-size: 12px; 
+       border: 1px solid #ffffff;
+       border-radius: 10px;
+       padding: auto;
+       text-align: left;
+       background-color: rgba(0, 0, 0, 0);   }
+       
+    placeholder { color: #ffffff; }
+       
+</style>
+
+<body>
+   <div class="top">
+    <div class="shif">
+        <h4 class="bune" id="logoText"> NOSA CV </h4>
+    </div>
+    
+    <center>
+    <div id="details">
+      </br>
+      </br>
+      <div class="info" align="left">
+        <h3> Full Name </h3>
+        <input id="fullName"></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Gender  </h3>
+        <input id="gender"></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Occupation </h3>
+        <input id="occupation"></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Phone Number </h3>
+        <input id="phoneNumber" type="number"></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> E-mail </h3>
+        <input id="email"></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Address </h3>
+        <textarea id="address"></textarea>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Date of Birth </h3>
+      </div>
+      <div class="info2" align="left">
+        <h5>Day:</h5>
+        <input id="day" placeholder="20" maxlength="2" type="number"></input>
+        <h5>Month:</h5>
+        <input id="month" placeholder="06" maxlength="2" type="number"></input>
+        </br>
+        <h5>Year:</h5>
+        <input id="year" placeholder="1990" maxlength="4" type="number"></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Religion </h3>
+        <input id="religion"></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Marital Status </h3>
+        <input id="maritalStatus"></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> About Me </h3>
+        <textarea id="aboutMe" maxlength="480"></textarea></textarea>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Experience </h3>
+      </div>
+      <div class="info2" align="left">
+        <input id="year1" placeholder="2000" maxlength="4" type="number"></input>
+        <h5> -- </h5>
+        <input id="year2" placeholder="2023" maxlength="4" type="number"></input>
+      </div>
+      <div class="info" align="left">
+        <input id="companyName" placeholder="Company Name"></input>
+        <input id="position" placeholder="Your position in the company e.g Manager, C.E.O, Attendant"></input>
+        <textarea id="experience" maxlength="480" placeholder="Write more details about your experience on the job"></textarea>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> Education </h3>
+      </div>
+      <div class="info2" align="left">
+        <input id="primaryYear1" placeholder="2000" maxlength="4" type="number"></input>
+        <h5> -- </h5>
+        <input id="primaryYear2" placeholder="2023" maxlength="4" type="number"></input>
+      </div>
+      <div class="info" align="left">
+        <input id="primaryEducation" placeholder="Name of Primary School"></input>
+      </div>
+      </br>
+      <div class="info2" align="left">
+        <input id="secondaryYear1" placeholder="2000" maxlength="4" type="number"></input>
+        <h5> -- </h5>
+        <input id="secondaryYear2" placeholder="2023" maxlength="4" type="number"></input>
+      </div>
+      <div class="info" align="left">
+        <input id="secondaryEducation" placeholder="Name of Secondary School"></input>
+      </div>
+      </br>
+      
+      <div class="info2" align="left">
+        <input id="uniYear1" placeholder="2000" maxlength="4" type="number"></input>
+        <h5> -- </h5>
+        <input id="uniYear2" placeholder="2023" maxlength="4" type="number"></input>
+      </div>
+      <div class="info" align="left">
+        <input id="uniEducation" placeholder="Name of University" ></input>
+      </div>
+      
+      </br>
+      
+      <div class="info" align="left">
+        <h3> First Reference </h3>
+        <input id="name1" placeholder="Full name"></input>
+        <input id="positionInCompany" placeholder="Position in which company"></input>
+        <input id="phone1" placeholder="Phone number" type="number"></input>
+        <input id="email1" placeholder="email address"></input>
+        </br>
+        <h3> Second Reference </h3>
+        <input id="name2" placeholder="Full name"></input>
+        <input id="positionInCompany2" placeholder="Position in which company"></input>
+        <input id="phone2" placeholder="Phone number" type="number"></input>
+        <input id="email2" placeholder="email address"></input>
+      </div>
+      
+      </br>
+      
+      <div align="left" style="margin-left: 20px">
+        <button class="download" id="createImage" onclick="appear()"> Create CV Image </button>
+      </div>
+      </div>
+    </center>
+
+
+
+  	<center>
+	      <div  id="image" class="cv" width="310" height="438.5">
+	          <div>
+	              <div class="space"></div>
+	              <center>
+	                  
+	                <div class="bbc" align="left">
+	                  <div class="blackBox"></div>
+	                </div>
+	                
+	                <table>
+	                  <tr>
+	                    <td style="width: 100%">
+	                      <div class="names" align="left">
+	                        <h3 style="text-transform: uppercase" id="fullNameCV"> OMOIGUI NOSA </h3>
+	                        <h5 id="occupationCV"> SOFTWARE ENGINEER </h5>
+	                      </div>
+	                      <div class="contacts" align="left">
+	                         <table>
+	                          <tr>
+	                            <td>
+	                              <i class="fa fa-phone"></i>
+	                            </td>
+	                            <td>
+	                              <p id="phoneNumberCV"> 08137859010 </p>
+	                            </td>
+	                          </tr>
+	                          <tr>
+	                            <td>
+	                              <i class="fa fa-envelope"></i>
+	                            </td>
+	                            <td>
+	                              <p id="emailCV"> maxm33020@gmail.com</p>
+	                            </td>
+	                          </tr>
+	                          <tr>
+	                            <td>
+	                              <i class="fa fa-home"></i>
+	                            </td>
+	                            <td>
+	                              <p id="addressCV"> 8, Aiteobore lane, off Ahanor Street, Off College Road Benin City</p>
+	                            </td>
+	                          </tr>
+	                        </table>
+	                       </div>
+	                    </td>
+	                  </tr>
+	                </table>
+	                
+	                <div class="bbc2" align="left">
+	                  <div class="blackBox"></div>
+	                </div>
+	                
+	                <table>
+	                  <tr>
+	                    <td style="width: 40%">
+	                      
+	                        <div class="personal" align="left">
+	                          <h3> PERSONAL INFO </h3>
+	                          <table>
+	                            <tr>
+	                              <td style="width: 20%">
+	                                <p class="person"> Gender </p>
+	                              </td>
+	                              <td style="width: 80%">
+	                                <p id="genderCV"> Male  </p>
+	                              </td>
+	                            </tr>
+	                            <tr>
+	                      <td style="width: 20%">
+	                        <p class="person"> Date of birth </p>
+	                      </td>
+	                      <td style="width: 80%">
+	                        <p id="dmy"> 1990 June 20th </p>
+	                      </td>
+	                    </tr>
+	                    <tr>
+	                      <td style="width: 20%">
+	                        <p class="person"> Nationality </p>
+	                      </td>
+	                      <td style="width: 80%">
+	                        <p> Nigerian </p>
+	                      </td>
+	                    </tr>
+	                    <tr>
+	                      <td style="width: 20%">
+	                        <p class="person"> Religion </p>
+	                      </td>
+	                      <td style="width: 80%">
+	                        <p id="religionCV"> Christian </p>
+	                      </td>
+	                    </tr>
+	                    <tr>
+	                      <td style="width: 20%">
+	                        <p class="person"> Marital Status  </p>
+	                      </td>
+	                      <td style="width: 80%">
+	                        <p id="maritalStatusCV"> Single </p>
+	                      </td>
+	                    </tr>
+	                         </table>
+	                       </div>
+	                      
+	                       
+	                       <div class="bbc" align="left">
+	                          <div class="blackBox"></div>
+	                        </div>
+	                
+	                        <div class="ref" align="left">
+	                         <h3> REFERENCE </h3>
+	                         <div class="refA">
+	                    <p id="name1CV" class="smaller"> Olu Mark </p>
+	                    <p id="positionInCompanyCV"> Manager of Glicth Industries </p>
+	                    <p id="phone1CV"> 07055578251 </p>
+	                    <p id="email1CV"> markOlu3348@gmail.com </p>
+	                </div>
+	                <div class="refB">
+	                    <p id="name2CV"class="smaller"> Okoh Stella </p>
+	                    <p id="positionInCompany2CV"> C.E.O of Stella's Fabric </p>
+	                    <p id="phone2CV"> 08034458257 </p>
+	                    <p id="email2CV"> stellastars12@gmail.com </p>
+	                </div>
+	                         </div>
+	                      
+	                    </td>
+	                    <td style="width: 60%">
+	                      
+	                        <div class="about" align="left">
+	                          <h3> MORE ABOUT ME </h3>
+	                          <p id="aboutMeCV"> Welcome to the website. If you're here, you're likely looking to find random words.
+	                          Random Word Generator is the perfect tool to help you do this. While this tool isn't 
+	                          a word creator, it is a word generator that will generate random words for a variety of
+	                          activities or uses. Even better, it allows you to adjust the parameters of the random 
+	                          words to best fit your needs. </p>
+	                        </div>
+	                        
+	                        <div class="bbc" align="left">
+	                          <div class="blackBox"></div>
+	                        </div>
+	                        
+	                        <div class="exp" align="left">
+	                          <h3> EXPERIENCE </h3>
+	                          <table>
+	                            <tr>
+	                      <td style="width: 20%">
+	                        <p id="yearsCV"class="exps stb"> 2011-2016 </p>
+	                      </td>
+	                      <td style="width: 80%">
+	                        <p id="companyNameCV"class="stb" > GLOW TECH </p>
+	                      </td>
+	                    </tr>
+	                    <tr>
+	                      <td></td>
+	                      <td style="width: 80%">
+	                        <p id="positionCV"class="stb"> Web Designer </p>
+	                      </td>
+	                    </tr>
+	                    <tr>
+	                      <td></td>
+	                      <td style="width: 80%">
+	                        <p id="experienceCV"> Welcome to the website. If you're here, you're likely looking to find random words.
+	                        Random Word Generator is the perfect tool to help you do this. While this tool isn't 
+	                        a word creator, it is a word generator that will generate random words for a variety of
+	                        activities or uses. Even better, it allows you to adjust the parameters of the random 
+	                        words to best fit your needs. </p>
+	                      </td>
+	                    </tr>
+	                          </table>
+	                        </div>
+	                        
+	                        <div class="bbc" align="left">
+	                          <div class="blackBox"></div>
+	                        </div>
+	                        
+	                        <div class="education" align="left">
+	                          <h3> EDUCATION </h3>
+	                          <table>
+	                            <td style="width: 20%">
+	                        <p id="primaryYearCV"class="edu"> 2000-2006 </p>
+	                      </td>
+	                      <td style="width: 80%">
+	                        <p id="primaryEducationCV"> Nosakhare primary school </p>
+	                      </td>
+	                    </tr>
+	                    <tr>
+	                      <td style="width: 20%">
+	                        <p id="secondaryYearCV"class="edu"> 2006-2012 </p>
+	                      </td>
+	                      <td style="width: 80%">
+	                        <p id="secondaryEducationCV"> Nosakhare secondary  school </p>
+	                      </td>
+	                    </tr>
+	                    <tr>
+	                      <td style="width: 20%">
+	                        <p id="uniYearCV"class="edu"> 2012-2016 </p>
+	                      </td>
+	                      <td style="width: 80%">
+	                        <p id="uniEducationCV"> Edo state university UNIBEN </p>
+	                      </td>
+	                    </tr>
+	                          </table>
+	                        </div>
+	                
+	                        
+	                                           
+	                    </td>
+	                  </tr>
+	                </table>
+	            </center>
+	        </div>
+      </div>
+      
+      <button class="download" id="downloadImage" onclick="takeshot()"> DOWNLOAD PNG </button>
+      <button class="download" id="editor" onclick="editor()"> EDIT DETAILS </button>
+  </center>
+  
+  </br>
+  </br>
+
+</body>
+</html>
